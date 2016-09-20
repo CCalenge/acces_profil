@@ -1,6 +1,6 @@
 <?php
  // on crée la requête SQL : on va chercher id,nom,note,photo de la table "trombi" et on les ordonne par note
- $sql = 'SELECT id,nom,note,photo FROM trombi ORDER BY note';
+ $sql = 'SELECT id,nom,photo FROM trombi ORDER BY nom';
  // on envoie la requête
  $req = mysql_query($sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
 
