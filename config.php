@@ -1,5 +1,5 @@
 
-<?php
+<!-- <?php
 // infos de connexion à la bdd
 
 $db = array(); $db['host'] = 'localhost';
@@ -10,4 +10,4 @@ if($_SERVER['SERVER_NAME'] != 'localhost'){
 $db['host'] = 'xxxx'; $db['user'] = 'xxxx'; // utilisateur
 $db['pass'] = 'xxxxx'; //password
 $db['base'] = 'xxxx'; //nom de la base de donnee
-} ?>
+} ?> -->

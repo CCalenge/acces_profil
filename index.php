@@ -1,25 +1,26 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/
-DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="fr-fr">
+<!DOCTYPE html>
 
+<html>
 <head>
-<link rel="stylesheet" type="text/css" href="templates/styles.css" type="screen" />
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css" type="screen" />
+  <title>ajout de membre</title>
 </head>
 
 <body>
-<div id="header">
- <a href="form.html"> Rajouter un membre</a><br>
- <?php
- include "config.php";
- include "database.fn.php";
- $link = database_connect($db);
- $dir = 'images/';
+  <div id="header">
+    <a href="form.html"> Rajouter un membre</a><br>
+    <?php
+    include "config.php";
+    include "database.fn.php";
+    $link = database_connect($db);
+    $dir = 'images/';
 
- /**** on va chercher la boucle afin d'afficher la gallery*/
- include "gallery.php";
+    /**** on va chercher la boucle afin d'afficher la gallery*/
+    include "gallery.php";
 
- ?>
-</div><!–fermeture header –>
+    ?>
+  </div><!–fermeture header –>
 </body>
 
 </html>
