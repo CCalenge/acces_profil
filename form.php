@@ -6,9 +6,9 @@
   </head>
   <body>
 
-    <form action="form_post.php" method="post" enctype="multipart/form-data">
+    <form action="form_post.php" method="POST" enctype="multipart/form-data">
 
-    <label for="nom">Nom : </label><input type="text" name="name"/><br/>
+    <label for="nom">Nom : </label><input type="text" name="nom"/><br/>
 
     <label for="prenom">Prénom : </label><input type="text" name="prenom"><br/>
 
