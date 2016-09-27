@@ -5,6 +5,7 @@ include'connect.php';
 
 $nom = $_POST['nom'];
 $prenom = $_POST['prenom'];
+$annee = $_POST['annee'];
 
 if (!isset($nom) || empty($nom)) {
     echo "Veuillez entrer un nom !<br/>";
@@ -12,6 +13,10 @@ if (!isset($nom) || empty($nom)) {
 
 if (!isset($prenom) || empty($prenom)) {
   echo "Veuillez entrer un prénom !<br/>";
+}
+
+if (!isset($annee) || empty($annee)) {
+  echo "Veuillez indiquer l'année où vous étiez à la MOS !<br/>";
 }
 
 
@@ -42,11 +47,14 @@ if (isset($_FILES['photo']) AND $_FILES['photo']['error'] == 0) {
           echo "L'envoi a bien été effectué !";
     }
   }
-  $req=$bdd->prepare('INSERT INTO trombi(nom, prenom,photo,date_insertion)
-  VALUES (:nom, :prenom, :photo, NOW())');
+
+  // insertion des données dans la bdd
+  $req=$bdd->prepare('INSERT INTO trombi(nom, prenom, annee, photo, date_insertion)
+  VALUES (:nom, :prenom, :annee, :photo, NOW())');
   $req->execute (array(
     'nom'=>$nom,
     'prenom'=>$prenom,
+    'annee'=>$annee,
     'photo'=>$photo
   ));
   $req->closeCursor();

@@ -12,6 +12,8 @@
 
     <label for="prenom">Prénom : </label><input type="text" name="prenom"><br/>
 
+    <label for="annee">Année d'entrée à la MOS : </label><input type="text" name="annee"><br/>
+
     <label for="photo">Ajouter une trombine :
     </label><input type="file" name="photo"/>
 
