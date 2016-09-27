@@ -14,7 +14,7 @@ if (isset($_FILES['photo']) AND $_FILES['photo']['error'] == 0) {
     if (in_array($extension_upload, $extensions_autorisees))
     {
           // Valider le fichier et le stocker définitivement
-          move_uploaded_file($_FILES['photo']['tmp_name'],'./uploads/'.basename($_FILES['photo']['name']));
+          move_uploaded_file($_FILES['photo']['tmp_name'],'uploads/'.basename($_FILES['photo']['name']));
           echo "L'envoi a bien été effectué !";
     }
   }
