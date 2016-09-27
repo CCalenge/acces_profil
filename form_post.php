@@ -42,9 +42,6 @@ if (isset($_FILES['photo']) AND $_FILES['photo']['error'] == 0) {
           echo "L'envoi a bien été effectué !";
     }
   }
-}
-
-else {
   $req=$bdd->prepare('INSERT INTO trombi(nom, prenom,photo,date_insertion)
   VALUES (:nom, :prenom, :photo, NOW())');
   $req->execute (array(
@@ -54,5 +51,6 @@ else {
   ));
   $req->closeCursor();
 }
+
 
  ?>
