@@ -10,7 +10,7 @@
 
     <a href="form.php">Ajouter une trombine</a>
 
-    <div class="">
+    <div class="galerie">
 
       <!-- insertion des photos -->
 
