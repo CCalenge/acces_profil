@@ -1,0 +1,16 @@
+h1 {
+text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+.portrait img {
+  width: 300px;
+  float: left;
+  display: inline;
+  padding: 5px;
+
+
+}
