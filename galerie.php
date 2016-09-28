@@ -9,25 +9,18 @@
 <?php
 include 'connect.php';
 
-
 // requête sql pour récupérer les photos
-$req = $bdd->prepare('SELECT id, prenom, nom, annee, photo FROM trombi ORDER BY nom');
+$reponse = $bdd->query("SELECT id, prenom, nom, annee, photo FROM trombi WHERE annee = '2016' ORDER BY nom ");
 // on envoie la requête en faisant une boucle
-while ($donnees = $req->fetch())
-{
- ?>
+while ($donnees = $reponse->fetch())
+{ ?>
 
- <div class="portrait">
-   <h3>
-     <?php echo htmlspecialchars($donnees['prenom']); ?>
-   </h3>
-
- </div>
+  <img src="uploads/<?php echo $donnees['photo'];?>" />
+<?php
 }
+$reponse->closeCursor();
 
-
-
-
+?>
 
 </body>
 </html>

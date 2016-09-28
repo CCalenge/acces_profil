@@ -13,6 +13,8 @@
     <div class="galerie">
 
       <!-- insertion des photos -->
+      <?php include 'galerie.php'; ?>
+
 
     </div>
 

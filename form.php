@@ -6,6 +6,8 @@
   </head>
   <body>
 
+<!-- Le formulaire est destiné à l'administration qui entrera en premier les données -->
+
     <form action="form_post.php" method="POST" enctype="multipart/form-data">
 
     <label for="nom">Nom : </label><input type="text" name="nom"/><br/>
