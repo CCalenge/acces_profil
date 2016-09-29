@@ -29,6 +29,13 @@ h2 {
   padding-top: 0;
 }
 
+.lien {
+  text-align: center;
+  text-decoration: none;
+}
+
+/*formulaire page form.php*/
+
 form {
   margin: auto;
   width: 80%;

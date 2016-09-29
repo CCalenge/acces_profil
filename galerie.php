@@ -25,6 +25,8 @@
 
         <h3 class="nom"><?php echo $donnees['prenom'];?> <?php echo $donnees['nom']; ?></h3>
 
+        <a class="lien" href="portrait.php">+ d'infos</a>
+
       </div>
 
       <?php
@@ -32,6 +34,8 @@
     $reponse->closeCursor();
 
     ?>
+
+
   </div>
 </body>
 </html>
