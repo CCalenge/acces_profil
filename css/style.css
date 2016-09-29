@@ -2,14 +2,31 @@ body {
   background-color: rgba(50, 90, 250, 1);
 }
 
+header {
+  display:flex;
+  justify-content:flex-end;
+}
+
+.lien {
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 1);
+  width: 30%;
+  border-radius: 10px;
+  padding: 5px;
+}
+
 h1 {
-text-align: center;
-font-family: sans-serif;
+  text-align: center;
+  font-family: sans-serif;
+  color: rgba(255, 255, 255, 1);
 }
 
 h2 {
   text-align: center;
   font-family: sans-serif;
+
 }
 
 .container {
@@ -18,20 +35,30 @@ h2 {
   justify-content: center;
 }
 
+.portrait {
+  margin: 20px;
+}
+
 .portrait img {
   width: 200px;
-  padding: 20px;
+  margin: 0px;
+  padding: 0;
 }
 
 .nom {
   text-align: center;
-  margin-top: 0;
+  color: rgba(255, 255, 255, 1);
+  margin-top: 5px;
   padding-top: 0;
 }
 
-.lien {
-  text-align: center;
+.lien2 {
+  text-align: right;
+}
+
+.lien2 a {
   text-decoration: none;
+
 }
 
 /*formulaire page form.php*/
@@ -42,16 +69,25 @@ form {
   padding: 1em;
   border:1px solid #ccc;
   border-radius: 1em;
+  align-content: center;
 }
 
 label {
   display: inline-block;
   width: 250px;
   text-align: right;
+  color: rgba(255, 255, 255, 1);
+  padding-top: 20px;
   padding-right: 6px;
   font-family: sans-serif;
 }
 
 input {
   font: 1em sans-serif;
+  border-radius: 10px;
+}
+
+.bouton {
+  margin: 10px;
+  align-content: center;
 }

@@ -17,12 +17,12 @@
 
     <label for="annee">Année d'entrée à la MOS&#8239;:  </label><input type="text" name="annee"><br/>
 
-    <label for="photo">Ajouter une trombine&#8239;: 
-    </label><input type="file" name="photo"/>
+    <label for="photo">Ajouter une trombine&#8239;:
+    </label><input class="bouton" type="file" name="photo"/>
 
     <input type="hidden" name="MAX_FILE_SIZE" value="1000000" /><br/>
 
-    <input type="submit" name="submit" value="Envoyer" />
+    <input class="bouton" type="submit" name="submit" value="Envoyer" />
     </form>
 
 

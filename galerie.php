@@ -11,7 +11,7 @@
   include 'connect.php';
 
   // requête sql pour récupérer les photos
-  $reponse = $bdd->query("SELECT id, prenom, nom, annee, photo FROM trombi WHERE annee = '2016' ORDER BY nom ");
+  $reponse = $bdd->query("SELECT id, prenom, nom, annee, photo FROM trombi ORDER BY nom ");
   // on envoie la requête en faisant une boucle
   ?>
   <div class="container">
@@ -25,7 +25,9 @@
 
         <h3 class="nom"><?php echo $donnees['prenom'];?> <?php echo $donnees['nom']; ?></h3>
 
-        <a class="lien" href="portrait.php">+ d'infos</a>
+        <p class="lien2">
+          <a href="portrait.php?portrait=<?php echo $donnees['id'];?>">+ d'infos</a>
+        </p>
 
       </div>
 
