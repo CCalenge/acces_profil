@@ -16,7 +16,7 @@ ini_set ('display_error',1);
 					// Comme on veut afficher les eventuelles erreurs ici, dans le <p>
 					// on affiche le résultat renvoyé par la fonction verify_login
 					// On lui passe en paramètre les nom, prénom et password entrés par l'utilisateur
-					echo verify_login($_POST["prenom"], $_POST["nom"] $_POST["pass"]);
+					echo verify_login($_POST["prenom"], $_POST["nom"], $_POST["pass"]);
 				}
 			}
 
@@ -48,7 +48,7 @@ ini_set ('display_error',1);
           }
           else{
             // si OK, ouverture de la page form.php
-            header ('form.php');
+            header ("Location:form.php");
           }
         }
       }
