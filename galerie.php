@@ -8,7 +8,7 @@
 <body>
   <h2>Année 2016</h2>
   <?php
-  include 'connect.php';
+  include 'bdd/connect.php';
 
   // requête sql pour récupérer les photos
   $reponse = $bdd->query("SELECT id, prenom, nom, annee, photo FROM trombi ORDER BY nom ");

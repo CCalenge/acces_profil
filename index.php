@@ -9,7 +9,7 @@
 
   <header>
     <p class="lien">
-      <a href="form.php">Espace administration</a><br/>
+      <a href="admin/log_admin.php">Espace administration</a><br/>
       <a href="profil.php">Espace membre</a>
     </p>
   </header>

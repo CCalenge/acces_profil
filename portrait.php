@@ -8,10 +8,10 @@
 <body>
 
   <?php
-  include 'connect.php';
+  include 'bdd/connect.php';
   ?>
 
-  <!--requête sql pour afficher le profil séllectionné sur le trombinoscope -->
+  <!--requête sql pour afficher le profil sélectionné sur le trombinoscope -->
 
 
   <?php
@@ -31,7 +31,7 @@
   <?php echo $donnees['prenom'];?> <?php echo $donnees['nom']; ?>
 </p>
 <p class="nom">
-  En formation à la MOS en <?php echo $donnees['annee'] ?>
+  En formation à la MOS en <?php echo $donnees['annee']; ?>
 </p>
 
 
