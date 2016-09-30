@@ -16,11 +16,12 @@ ini_set ('display_error',1);
 					// Comme on veut afficher les eventuelles erreurs ici, dans le <p>
 					// on affiche le résultat renvoyé par la fonction verify_login
 					// On lui passe en paramètre les nom, prénom et password entrés par l'utilisateur
-					echo verify_login($_POST["prenom"], $_POST["nom"], $_POST["pass"]);
+					echo verify_login($_POST["prenom"], $_POST["nom"], $_POST["pass"])
 				}
 			}
 
-      function verify_login($prenom, $nom, $pass){
+      function verify_login($prenom, $nom, $pass);
+      {
 
         // création de la requête pour récupérer l'id, les nom, prénom et mot de passe
         // on cherche la ligne avec nom et prenom demandé ($nom, $prenom)
@@ -29,7 +30,7 @@ ini_set ('display_error',1);
         include 'bdd/connect.php';
 
         $req = $bdd->prepare('SELECT id, nom, prenom, pass FROM admin WHERE nom = ? AND prenom = ?');
-        $req->execute(array($nom, $prenom));
+        $req->execute(array($nom));
 
         // on compte le nombre d'entrées retournées. Si 0, alors le login n'existe pas
 
@@ -44,7 +45,7 @@ ini_set ('display_error',1);
           $user = $req->fetch();
           if ($user['pass'] != $pass){
             $req->closeCursor();
-            return ("nom, prénom ou mot de passe incorrects");
+            return ("nom, prénom ou mot de passe incorrect");
           }
           else{
             // si OK, ouverture de la page form.php
