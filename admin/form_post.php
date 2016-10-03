@@ -1,6 +1,6 @@
 <?php
 
-include'connect.php';
+include'../bdd/connect.php';
 // tester si le nom et le prénom ont été entrés
 
 $nom = $_POST['nom'];
@@ -43,8 +43,8 @@ if (isset($_FILES['photo']) AND $_FILES['photo']['error'] == 0) {
 
           // Valider le fichier et le stocker définitivement
           $resultat =
-          move_uploaded_file($_FILES['photo']['tmp_name'],'uploads/'.$photo);
-          echo "L'envoi a bien été effectué !";
+          move_uploaded_file($_FILES['photo']['tmp_name'],'../uploads/'.$photo);
+          echo "L'envoi a bien été effectué !<br/><a href='form.php'>retour au formulaire</a>";
     }
   }
 
