@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 ini_set ('display_error',1);
 
@@ -16,7 +16,7 @@ ini_set ('display_error',1);
 					// Comme on veut afficher les eventuelles erreurs ici, dans le <p>
 					// on affiche le résultat renvoyé par la fonction verify_login
 					// On lui passe en paramètre les nom, prénom et password entrés par l'utilisateur
-					// echo verify_login($_POST["pseudo"], $_POST["pass"]);
+					echo verify_login($_POST["pseudo"], $_POST["pass"]);
 
           header("Location:log_admin.php");
 				}
@@ -56,4 +56,4 @@ ini_set ('display_error',1);
         }
       }
 
- ?>
+ ?> -->
