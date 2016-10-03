@@ -7,20 +7,22 @@ ini_set ('display_error',1);
 			// On peut faire nos verif
 			if (isset($_POST["submit"])){
 				// Si l'utilisateur n'a pas rentré de nom, prénom et de mot de passe
-				if ($_POST["nom"] == "" || $_POST["prenom"] == "" || $_POST["pass"] == ""){
+				if ($_POST["pseudo"] == "" || $_POST["pass"] == ""){
 					// Affichage erreur
 					echo "Les champs ne doivent pas être vides";
 				}
 				else {
-					// Sinon, on verifie si les nom, prenom et mot de passe sont OK
+					// Sinon, on verifie si le pseudo et le mot de passe sont OK
 					// Comme on veut afficher les eventuelles erreurs ici, dans le <p>
 					// on affiche le résultat renvoyé par la fonction verify_login
 					// On lui passe en paramètre les nom, prénom et password entrés par l'utilisateur
-					echo verify_login($_POST["prenom"], $_POST["nom"], $_POST["pass"])
+					// echo verify_login($_POST["pseudo"], $_POST["pass"]);
+
+          header("Location:log_admin.php");
 				}
 			}
 
-      function verify_login($prenom, $nom, $pass);
+      function verify_login($pseudo, $pass)
       {
 
         // création de la requête pour récupérer l'id, les nom, prénom et mot de passe
@@ -29,8 +31,8 @@ ini_set ('display_error',1);
 
         include 'bdd/connect.php';
 
-        $req = $bdd->prepare('SELECT id, nom, prenom, pass FROM admin WHERE nom = ? AND prenom = ?');
-        $req->execute(array($nom));
+        $req = $bdd->prepare('SELECT id,pseudo, nom, prenom, pass FROM admin WHERE pseudo = ?');
+        $req->execute(array($pseudo));
 
         // on compte le nombre d'entrées retournées. Si 0, alors le login n'existe pas
 
@@ -45,7 +47,7 @@ ini_set ('display_error',1);
           $user = $req->fetch();
           if ($user['pass'] != $pass){
             $req->closeCursor();
-            return ("nom, prénom ou mot de passe incorrect");
+            return ("pseudo ou mot de passe incorrect");
           }
           else{
             // si OK, ouverture de la page form.php
@@ -53,8 +55,5 @@ ini_set ('display_error',1);
           }
         }
       }
-
-
-
 
  ?>

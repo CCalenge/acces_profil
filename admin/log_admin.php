@@ -11,11 +11,15 @@
 
 <form action="log_admin_post.php" method="post">
 
-  <label for="pseudo">pseudo&#8239;:  </label><input type="text" name="nom"/><br/>
+  <label for="pseudo">pseudo&#8239;:  </label><input type="text" name="pseudo"/><br/>
 
   <label for="pass">Mot de passe&#8239;: </label><input type="password" name="pass">
 
   <input type="submit" value="validez">
+
+  <p>
+    <?php echo verify_login($_POST["pseudo"], $_POST["pass"]); ?>
+  </p>
 
 
 </form>
