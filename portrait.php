@@ -39,6 +39,9 @@
 $req->closeCursor();
 ?>
 
+<p>
+  <a href="index.php">Retour au trombinoscope</a>
+</p>
 
 </div>
 </body>
