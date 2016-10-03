@@ -3,9 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>formulaire d'ajout de photo</title>
-    <link rel="stylesheet" href="css/style.css" media="screen" title="no title"/>
+    <link rel="stylesheet" href="../css/style.css" media="screen" title="no title"/>
   </head>
   <body>
+
+    <h1>Manche Open School</h1>
 
 <!-- Le formulaire est destiné à l'administration qui entrera en premier les données -->
 
