@@ -46,7 +46,7 @@
     <input class="bouton" type="submit" name="submit" value="Connexion" />
   </form>
   <p>
-    <a href="index.php">Retour au trombinoscope</a>
+    <a href="../index.php">Retour au trombinoscope</a>
   </p>
 
 </body>

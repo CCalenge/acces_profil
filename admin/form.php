@@ -29,7 +29,7 @@
 
 
     <p>
-      <a href="index.php">Retour au trombinoscope</a>
+      <a href="../index.php">Retour au trombinoscope</a>
     </p>
 
   </body>
