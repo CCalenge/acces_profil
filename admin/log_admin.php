@@ -89,6 +89,15 @@ function verify_login($pseudo, $pass){
       return ("Pseudo ou mot de passe incorrect");
     }
     else {
+      // si OK, on démarre la session
+      session_start();
+      // et on crée une variable user_id contenant l'id de l'utilisateur en BDD
+      // Cette variable est stockée dans $_SESSION, et suit l'utilisateur sur les pages
+      $_SESSION["user_id"] = $user['id'];
+      // Mise à jour de la date du dernier login
+      $req = $bdd->prepare('UPDATE admin SET last_login = ? WHERE id = ?');
+      $req->execute(array(date('Y-m-d H:i:s'), $user['id']));
+      $req->closeCursor();
 
       // On envoie l'administrateur vers le formulaire d'ajout de photo pour le trombinoscope
       header("Location:form.php");
