@@ -41,8 +41,8 @@
     </label>
     <label for="pass">Mot de passe:
       <input type="password" name="password" />
-
     </label>
+
     <input class="bouton" type="submit" name="submit" value="Connexion" />
   </form>
   <p>
@@ -69,13 +69,13 @@ function verify_login($pseudo, $password){
 
   // Connexion BDD
   require_once '../bdd/connect.php';
-  // Creation de la requete, on veut l'id, le nom,le prénom et le mot de passe
+  // Creation de la requete, on veut l'id, le pseudo et le mot de passe
   // on cherche la ligne avec pseudo = le pseudo demandé par l'utilisateur (ici, $login)
   // Requetes préparées, voir doc PDO
   $req = $bdd->prepare('SELECT id, pseudo, password FROM membres WHERE pseudo = ?');
   $req->execute(array($pseudo));
 
-  // On compte le nombre d'entrée retournée. Si 0, alors le pseudo n'existe pas
+  // On compte le nombre d'entrées retournées. Si 0, alors le pseudo n'existe pas
   if ($req->rowCount() < 1){
     $req->closeCursor();
     // Le message sera affiché par le "echo" ligne 29
@@ -90,7 +90,7 @@ function verify_login($pseudo, $password){
     }
     else {
 
-      // On envoie l'administrateur vers le formulaire d'ajout de photo pour le trombinoscope
+      // On envoie le membre vers la page de profil
       header("Location:profil.php");
     }
   }
