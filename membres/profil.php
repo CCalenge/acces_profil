@@ -4,6 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="../images/favicon.png"/>
     <title>profil</title>
     <link rel="stylesheet" href="../css/style.css" media="screen" title="no title"/>
   </head>
