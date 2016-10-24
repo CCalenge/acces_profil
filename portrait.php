@@ -22,27 +22,26 @@
   $donnees=$req->fetch();
   ?>
 
-
+  
   <div class="portrait">
 
-  <img src="uploads/<?php echo $donnees['photo'];?>" />
-</div>
+    <img src="uploads/<?php echo $donnees['photo'];?>" />
 
-<p class="nom">
-  <?php echo $donnees['prenom'];?> <?php echo $donnees['nom']; ?>
-</p>
-<p class="nom">
-  En formation à la MOS en <?php echo $donnees['annee']; ?>
-</p>
+    <p class="nom">
+      <?php echo $donnees['prenom'];?> <?php echo $donnees['nom']; ?>
+    </p>
+    <p class="nom">
+      En formation à la MOS en <?php echo $donnees['annee']; ?>
+    </p>
+  </div>
 
+  <?php
+  $req->closeCursor();
+  ?>
 
-<?php
-$req->closeCursor();
-?>
-
-<p>
-  <a href="index.php">Retour au trombinoscope</a>
-</p>
+  <p>
+    <a href="index.php">Retour au trombinoscope</a>
+  </p>
 
 </div>
 </body>

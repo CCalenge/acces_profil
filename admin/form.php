@@ -8,7 +8,7 @@
   </head>
   <body>
 
-    <h1>Manche Open School</h1>
+    <img class="logotype" src="../images/logo_mosstlo.svg" alt="logo de la mos saint-lo" />
 
 <!-- Le formulaire est destiné à l'administration qui entrera en premier les données -->
 

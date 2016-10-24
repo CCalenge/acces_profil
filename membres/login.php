@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <h1>Manche Open School</h1>
+  <img class="logotype" src="../images/logo_mosstlo.svg" alt="logo de la mos saint-lo" />
   <form action="login.php" method="POST">
     <!-- le <p> contient les messages. On affiche les retours ici -->
     <p>
