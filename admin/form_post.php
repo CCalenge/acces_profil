@@ -6,6 +6,7 @@ include'../bdd/connect.php';
 $nom = $_POST['nom'];
 $prenom = $_POST['prenom'];
 $annee = $_POST['annee'];
+$pass_prov = $_POST['pass_prov'];
 
 if (!isset($nom) || empty($nom)) {
     echo "Veuillez entrer un nom !<br/>";
@@ -19,6 +20,9 @@ if (!isset($annee) || empty($annee)) {
   echo "Veuillez indiquer l'année où vous étiez à la MOS !<br/>";
 }
 
+if (!isset($pass_prov) || empty($pass_prov)) {
+  echo "Veuillez entrer un mot de passe provisoire !<br/>";
+}
 
 // tester si le fichier photo a été envoyé et s'il n'y a pas d'erreur
 if (isset($_FILES['photo']) AND $_FILES['photo']['error'] == 0) {
@@ -49,11 +53,12 @@ if (isset($_FILES['photo']) AND $_FILES['photo']['error'] == 0) {
   }
 
   // insertion des données dans la bdd
-  $req=$bdd->prepare('INSERT INTO trombi(nom, prenom, annee, photo, date_insertion)
-  VALUES (:nom, :prenom, :annee, :photo, NOW())');
+  $req=$bdd->prepare('INSERT INTO trombi(nom, prenom, pass_prov, annee, photo, date_insertion)
+  VALUES (:nom, :prenom, :pass_prov, :annee, :photo, NOW())');
   $req->execute (array(
     'nom'=>$nom,
     'prenom'=>$prenom,
+    'pass_prov'=>$pass_prov,
     'annee'=>$annee,
     'photo'=>$photo
   ));
