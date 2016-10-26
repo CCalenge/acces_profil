@@ -22,7 +22,7 @@
       // On peut faire nos verif
       if (isset($_POST["submit"])){
         // Si l'utilisateur n'a pas rentré de login OU de password
-        if ($_POST["pseudo"] == "" || $_POST["password"] == ""){
+        if ($_POST["prenom"] == "" || $_POST["nom"] == "" || $_POST["password"] == ""){
           // Affichage erreur
           echo "Les champs ne doivent pas être vides";
         }
@@ -31,14 +31,17 @@
           // Comme on veut afficher les eventuelles erreurs ici, dans le <p>
           // on affiche le résultat renvoyé par la fonction verify_login
           // On lui passe en paramètre le login et password entrés par l'utilsiateur
-          echo verify_login($_POST["pseudo"], $_POST["password"]);
+          echo verify_login($_POST["prenom"], $_POST["nom"],$_POST["password"]);
         }
       }
       ?>
     </p>
-    <!-- Formulaire pseudo/pass -->
-    <label for="pseudo">Pseudo:
-      <input type="text" name="pseudo" />
+    <!-- Formulaire nom/prenom/pass -->
+    <label for="prenom">Prénom :
+      <input type="text" name="prenom" />
+    </label>
+    <label for="nom">Nom :
+      <input type="text" name="nom" />
     </label>
     <label for="pass">Mot de passe:
       <input type="password" name="password" />
@@ -63,31 +66,31 @@
 *
 * @return string, message d'erreur eventuel
 */
-function verify_login($pseudo, $password){
+function verify_login($nom, $password){
 
   // @TODO utiliser un require_once et global $bdd pour ne pas répeter
   // plusieurs fois le code de connexion à la BDD
 
   // Connexion BDD
   require_once '../bdd/connect.php';
-  // Creation de la requete, on veut l'id, le pseudo et le mot de passe
-  // on cherche la ligne avec pseudo = le pseudo demandé par l'utilisateur (ici, $login)
+  // Creation de la requete, on veut l'id, le nom et le mot de passe
+  // on cherche la ligne avec nom = le pseudo demandé par l'utilisateur (ici, $login)
   // Requetes préparées, voir doc PDO
-  $req = $bdd->prepare('SELECT id, pseudo, password FROM membres WHERE pseudo = ?');
-  $req->execute(array($pseudo));
+  $req = $bdd->prepare('SELECT id, prenom, nom, pass_prov FROM trombi WHERE nom = ?');
+  $req->execute(array($nom));
 
   // On compte le nombre d'entrées retournées. Si 0, alors le pseudo n'existe pas
   if ($req->rowCount() < 1){
     $req->closeCursor();
     // Le message sera affiché par le "echo" ligne 29
-    return ("Le pseudo n'existe pas");
+    return ("Le nom n'existe pas");
   }
   else {
     // Si une ligne, le login existe, on verifie si password OK
     $user = $req->fetch();
     if ($user['password'] != $password){
       $req->closeCursor();
-      return ("Pseudo ou mot de passe incorrect");
+      return ("nom ou mot de passe incorrect");
     }
     else {
       // si OK, on démarre la session
