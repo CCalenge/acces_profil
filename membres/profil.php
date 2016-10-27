@@ -11,7 +11,7 @@
   <body>
 
     <!-- - un `<h1>` "Bienvenue " + login de l'utilisateur -->
-    <h1>Bienvenue <?php echo $_SESSION['pseudo']; ?></h1>
+    <h1>Bienvenue <?php echo $_SESSION['nom']; ?></h1>
 
         <!-- -une zone "Vos informations"
       - Afficher "Votre profil est " + public ou privé selon le champ `public` en BDD

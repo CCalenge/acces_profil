@@ -73,10 +73,10 @@ function verify_login($nom, $password){
 
   // Connexion BDD
   require_once '../bdd/connect.php';
-  // Creation de la requete, on veut l'id, le nom et le mot de passe
+  // Creation de la requete, on veut l'id, le prenom, le nom et le mot de passe
   // on cherche la ligne avec nom = le nom demandé par l'utilisateur (ici, $nom)
   // Requetes préparées, voir doc PDO
-  $req = $bdd->prepare('SELECT id, prenom, nom, pass_prov FROM trombi WHERE nom = ?');
+  $req = $bdd->prepare('SELECT id, prenom, nom, password FROM trombi WHERE nom = ?');
   $req->execute(array($nom));
 
   // On compte le nombre d'entrées retournées. Si 0, alors le nom n'existe pas
