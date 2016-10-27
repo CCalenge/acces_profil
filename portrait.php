@@ -22,7 +22,7 @@
   $donnees=$req->fetch();
   ?>
 
-  
+
   <div class="portrait">
 
     <img src="uploads/<?php echo $donnees['photo'];?>" />
@@ -42,7 +42,7 @@
   <p>
     <a href="index.php">Retour au trombinoscope</a>
   </p>
-
+  <?php include 'footer.php'; ?>
 </div>
 </body>
 </html>
