@@ -113,3 +113,36 @@ input {
   margin: 25px;
   align-content: center;
 }
+
+/*FOOTER*/
+.footer {
+    background-color: rgba(77, 77, 77, 1);
+    height: auto;
+    padding-bottom: 5px;
+    position: relative;
+    width: 100%;
+    border-bottom: 2px solid rgba(247, 147, 30, 1);
+    border-top: 4px solid rgba(247, 147, 30, 1);
+}
+.footer p {
+    margin: 0;
+}
+.footer h3 {
+    border-bottom: 1px solid rgba(247, 147, 30, 1);
+    color: #dddddd;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    padding: 5px 0 5px;
+    text-transform: uppercase;
+}
+
+.footer a, .footer-bottom a{
+    color: white;
+}
+.footer-bottom {
+    background-color: black;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 0;
+}
