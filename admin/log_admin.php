@@ -37,10 +37,10 @@
       ?>
     </p>
     <!-- Formulaire pseudo/pass -->
-    <label for="pseudo">Pseudo:
+    <label for="pseudo">Pseudo&#8239;:
       <input type="text" name="pseudo" />
     </label>
-    <label for="pass">Mot de passe:
+    <label for="pass">Mot de passe&#8239;:
       <input type="password" name="pass" />
 
     </label>

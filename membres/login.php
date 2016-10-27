@@ -37,13 +37,13 @@
       ?>
     </p>
     <!-- Formulaire nom/prenom/pass -->
-    <label for="prenom">Prénom :
+    <label for="prenom">Prénom&#8239;:
       <input type="text" name="prenom" />
     </label>
-    <label for="nom">Nom :
+    <label for="nom">Nom&#8239;:
       <input type="text" name="nom" />
     </label>
-    <label for="pass">Mot de passe:
+    <label for="pass">Mot de passe&#8239;:
       <input type="password" name="password" />
     </label>
 
@@ -61,7 +61,7 @@
 * function verify_login
 * Vérifie si le login existe et si le password correspond
 *
-* @param $login le login entré par l'utilisateur
+* @param $nom le nom entré par l'utilisateur
 * @param $password le password entré par l'utilisateur
 *
 * @return string, message d'erreur eventuel
@@ -74,15 +74,15 @@ function verify_login($nom, $password){
   // Connexion BDD
   require_once '../bdd/connect.php';
   // Creation de la requete, on veut l'id, le nom et le mot de passe
-  // on cherche la ligne avec nom = le pseudo demandé par l'utilisateur (ici, $login)
+  // on cherche la ligne avec nom = le nom demandé par l'utilisateur (ici, $nom)
   // Requetes préparées, voir doc PDO
   $req = $bdd->prepare('SELECT id, prenom, nom, pass_prov FROM trombi WHERE nom = ?');
   $req->execute(array($nom));
 
-  // On compte le nombre d'entrées retournées. Si 0, alors le pseudo n'existe pas
+  // On compte le nombre d'entrées retournées. Si 0, alors le nom n'existe pas
   if ($req->rowCount() < 1){
     $req->closeCursor();
-    // Le message sera affiché par le "echo" ligne 29
+    // Le message sera affiché par le "echo" ligne 27
     return ("Le nom n'existe pas");
   }
   else {
@@ -94,14 +94,14 @@ function verify_login($nom, $password){
     }
     else {
       // si OK, on démarre la session
-			session_start();
-			// et on crée une variable user_id contenant l'id de l'utilisateur en BDD
-			// Cette variable est stockée dans $_SESSION, et suit l'utilisateur sur les pages
-			$_SESSION["user_id"] = $user['id'];
-			// Mise à jour de la date du dernier login
-			$req = $bdd->prepare('UPDATE membres SET last_login = ? WHERE id = ?');
-			$req->execute(array(date('Y-m-d H:i:s'), $user['id']));
-			$req->closeCursor();
+			// session_start();
+			// // et on crée une variable user_id contenant l'id de l'utilisateur en BDD
+			// // Cette variable est stockée dans $_SESSION, et suit l'utilisateur sur les pages
+			// $_SESSION["user_id"] = $user['id'];
+			// // Mise à jour de la date du dernier login
+			// $req = $bdd->prepare('UPDATE membres SET last_login = ? WHERE id = ?');
+			// $req->execute(array(date('Y-m-d H:i:s'), $user['id']));
+			// $req->closeCursor();
 
       // On envoie le membre vers la page de profil
       header("Location:profil.php");

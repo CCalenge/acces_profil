@@ -18,7 +18,7 @@
 
     <label for="prenom">Prénom&#8239;:  </label><input type="text" name="prenom"><br/>
 
-    <label for="pass_prov">Mot de passe provisoire&#8239;: </label><input type="text" name="pass_prov" value=""></br>
+    <label for="password">Mot de passe&#8239;: </label><input type="password" name="password" value=""></br>
 
     <label for="annee">Année d'entrée à la MOS&#8239;:  </label><input type="text" name="annee"><br/>
 
