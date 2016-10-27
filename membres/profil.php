@@ -20,7 +20,7 @@
       - Afficher "Nom: " + le nom (`name`) de l'utilisateur. Si celui-ci est vide en BDD, afficher "Pas de nom indiqué"
       - Afficher un lien ou bouton "Modifier" -->
 
-    <?php include 'footer.php'; ?>
-    
+    <?php include '../footer.php'; ?>
+
   </body>
 </html>

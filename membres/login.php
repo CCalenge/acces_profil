@@ -53,8 +53,8 @@
     <a href="../index.php">Retour au trombinoscope</a>
   </p>
 
-  <?php include 'footer.php'; ?>
-  
+  <?php include '../footer.php'; ?>
+
 </body>
 
 </html>
