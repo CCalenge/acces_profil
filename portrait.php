@@ -14,7 +14,6 @@
 
   <!--requête sql pour afficher le profil sélectionné sur le trombinoscope -->
 
-
   <?php
   $req = $bdd->prepare('SELECT * FROM trombi WHERE id=?');
 
@@ -22,31 +21,36 @@
   $donnees=$req->fetch();
   ?>
 
+  <div class="container1">
 
-  <div class="portrait">
 
-    <img src="uploads/<?php echo $donnees['photo'];?>" />
+    <aside>
+      <?php include 'section_galerie.php'; ?>
+    </aside>
 
-    <div class="nom">
-      <?php echo $donnees['prenom'];?>
-      <?php echo $donnees['nom']; ?>
+    <div class="portrait1">
+
+      <img src="uploads/<?php echo $donnees['photo'];?>" />
+
+      <div class="nomportrait">
+        <?php echo $donnees['prenom'];?>
+        <?php echo $donnees['nom']; ?>
+      </div>
+      <div class="renseignement">
+        <p>
+          Né(e) le : <?php echo $donnees['date_naissance']; ?>
+        </p>
+        <p>
+          Ville : <?php echo $donnees['ville']; ?>
+        </p>
+        <p>
+          email : <?php echo $donnees['email']; ?>
+        </p>
+      </div>
+      <p class="formation">
+        En formation à la MOS en <?php echo $donnees['annee']; ?>
+      </p>
     </div>
-    <div class="renseignement">
-      <p>
-        Né(e) le : <?php echo $donnees['date_naissance']; ?>
-      </p>
-      <p>
-        Ville : <?php echo $donnees['ville']; ?>
-      </p>
-      <p>
-        email : <?php echo $donnees['email']; ?>
-      </p>
-    </div>
-
-
-    <p class="formation">
-      En formation à la MOS en <?php echo $donnees['annee']; ?>
-    </p>
 
     <div class="renseignement">
 
