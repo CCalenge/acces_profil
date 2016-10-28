@@ -16,7 +16,7 @@
 
 
   <?php
-  $req = $bdd->prepare('SELECT id,prenom, nom, annee, photo FROM trombi WHERE id=?');
+  $req = $bdd->prepare('SELECT * FROM trombi WHERE id=?');
 
   $req->execute(array($_GET['portrait']));
   $donnees=$req->fetch();
@@ -27,12 +27,37 @@
 
     <img src="uploads/<?php echo $donnees['photo'];?>" />
 
-    <p class="nom">
-      <?php echo $donnees['prenom'];?> <?php echo $donnees['nom']; ?>
-    </p>
-    <p class="nom">
+    <div class="nom">
+      <?php echo $donnees['prenom'];?>
+      <?php echo $donnees['nom']; ?>
+    </div>
+    <div class="renseignement">
+      <p>
+        Né(e) le : <?php echo $donnees['date_naissance']; ?>
+      </p>
+      <p>
+        Ville : <?php echo $donnees['ville']; ?>
+      </p>
+      <p>
+        email : <?php echo $donnees['email']; ?>
+      </p>
+    </div>
+
+
+    <p class="formation">
       En formation à la MOS en <?php echo $donnees['annee']; ?>
     </p>
+
+    <div class="renseignement">
+
+      <p>
+        Présentation : <?php echo $donnees['presentation']; ?>
+      </p>
+      <p>
+        Emploi : <?php echo $donnees['travail']; ?>
+      </p>
+    </div>
+
   </div>
 
   <?php

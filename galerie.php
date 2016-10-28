@@ -12,7 +12,7 @@
   include 'bdd/connect.php';
 
   // requête sql pour récupérer les photos
-  $reponse = $bdd->query("SELECT id, prenom, nom, annee, photo FROM trombi ORDER BY nom ");
+  $reponse = $bdd->query("SELECT * FROM trombi ORDER BY nom ");
   // on envoie la requête en faisant une boucle
   ?>
   <div class="container">
