@@ -41,12 +41,15 @@ header img {
 
 aside {
   background-color: rgba(247, 147, 30, 1);
-  padding: 5px, 0;
+  margin-bottom: 5px;
+  height : 700px;
+  width: 15%;
+  overflow: auto;
 
 }
 
 .divaside img  {
-  width: 100px;
+  width: 100%;
 }
 
 /*FOOTER*/
