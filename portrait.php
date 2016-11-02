@@ -9,28 +9,26 @@
 <body>
   <img class="logotype" src="images/logo_mosstlo.svg" alt="logo de la mos saint-lo" />
 
-  <?php
-  include 'bdd/connect.php';
 
-  ?>
-
-  <!--requête sql pour afficher le profil sélectionné sur le trombinoscope -->
-
-  <?php
-  $req = $bdd->prepare('SELECT * FROM trombi WHERE id=?');
-
-  $req->execute(array($_GET['portrait']));
-  $donnees=$req->fetch();
-  ?>
 
   <div class="container1">
 
 
     <aside>
-    <?php include 'section_galerie.php'; ?>
+      <?php include 'section_galerie.php'; ?>
     </aside>
 
     <div class="portrait1">
+
+      <?php
+      include 'bdd/connect.php';
+      //requête sql pour afficher le profil sélectionné sur le trombinoscope
+
+      $req = $bdd->prepare('SELECT * FROM trombi WHERE id=?');
+
+      $req->execute(array($_GET['portrait']));
+      $donnees=$req->fetch();
+      ?>
 
       <img src="uploads/<?php echo $donnees['photo'];?>" />
 
