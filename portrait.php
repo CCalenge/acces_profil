@@ -7,9 +7,11 @@
   <link rel="stylesheet" href="css/style.css" media="screen"/>
 </head>
 <body>
+  <img class="logotype" src="images/logo_mosstlo.svg" alt="logo de la mos saint-lo" />
 
   <?php
   include 'bdd/connect.php';
+
   ?>
 
   <!--requête sql pour afficher le profil sélectionné sur le trombinoscope -->
@@ -25,7 +27,7 @@
 
 
     <aside>
-      <?php include 'section_galerie.php'; ?>
+    <?php include 'section_galerie.php'; ?>
     </aside>
 
     <div class="portrait1">

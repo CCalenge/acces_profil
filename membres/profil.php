@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php session_start();?>
 
 <!DOCTYPE html>
 <html>
@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="../css/style.css" media="screen" title="no title"/>
   </head>
   <body>
-
-    <!-- - un `<h1>` "Bienvenue " + login de l'utilisateur -->
-    <h1>Bienvenue <?php echo $_SESSION['nom']; ?></h1>
+    <img class="logotype" src="../images/logo_mosstlo.svg" alt="logo de la mos saint-lo" />
+    <!-- - un `<h1>` "Bienvenue " + prénom de l'utilisateur -->
+    <h1>Bienvenue <?php echo $user['prenom']; ?></h1>
 
         <!-- -une zone "Vos informations"
       - Afficher "Votre profil est " + public ou privé selon le champ `public` en BDD

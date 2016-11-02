@@ -41,6 +41,12 @@ header img {
 
 aside {
   background-color: rgba(77, 77, 77, 1);
+  width: 100px;
+}
+
+.divaside img {
+  width: 100px;
+
 }
 /*FOOTER*/
 .footer {

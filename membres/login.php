@@ -10,7 +10,10 @@
 </head>
 
 <body>
+
   <img class="logotype" src="../images/logo_mosstlo.svg" alt="logo de la mos saint-lo" />
+
+
   <form action="login.php" method="POST">
     <!-- le <p> contient les messages. On affiche les retours ici -->
     <p>
@@ -21,7 +24,7 @@
       // $_POST["submit"] existe donc est n'est pas NULL
       // On peut faire nos verif
       if (isset($_POST["submit"])){
-        // Si l'utilisateur n'a pas rentré de login OU de password
+        // Si l'utilisateur n'a pas rentré de prénom de nom OU de password
         if ($_POST["prenom"] == "" || $_POST["nom"] == "" || $_POST["password"] == ""){
           // Affichage erreur
           echo "Les champs ne doivent pas être vides";
@@ -78,7 +81,7 @@ function verify_login($nom, $password){
   // Creation de la requete, on veut l'id, le prenom, le nom et le mot de passe
   // on cherche la ligne avec nom = le nom demandé par l'utilisateur (ici, $nom)
   // Requetes préparées, voir doc PDO
-  $req = $bdd->prepare('SELECT id, prenom, nom, password FROM trombi WHERE nom = ?');
+  $req = $bdd->prepare("SELECT id, prenom, nom, password FROM trombi WHERE nom = ?");
   $req->execute(array($nom));
 
   // On compte le nombre d'entrées retournées. Si 0, alors le nom n'existe pas
@@ -88,7 +91,7 @@ function verify_login($nom, $password){
     return ("Le nom n'existe pas");
   }
   else {
-    // Si une ligne, le login existe, on verifie si password OK
+    // Si une ligne, le nom existe, on verifie si password OK
     $user = $req->fetch();
     if ($user['password'] != $password){
       $req->closeCursor();
@@ -96,14 +99,14 @@ function verify_login($nom, $password){
     }
     else {
       // si OK, on démarre la session
-			// session_start();
-			// // et on crée une variable user_id contenant l'id de l'utilisateur en BDD
-			// // Cette variable est stockée dans $_SESSION, et suit l'utilisateur sur les pages
-			// $_SESSION["user_id"] = $user['id'];
-			// // Mise à jour de la date du dernier login
-			// $req = $bdd->prepare('UPDATE membres SET last_login = ? WHERE id = ?');
-			// $req->execute(array(date('Y-m-d H:i:s'), $user['id']));
-			// $req->closeCursor();
+			session_start();
+			// et on crée une variable user_id contenant l'id de l'utilisateur en BDD
+			// Cette variable est stockée dans $_SESSION, et suit l'utilisateur sur les pages
+			$_SESSION["user_id"] = $user['id'];
+			// Mise à jour de la date du dernier login
+			$req = $bdd->prepare('UPDATE trombi SET last_login = ? WHERE id = ?');
+			$req->execute(array(date('Y-m-d H:i:s'), $user['id']));
+			$req->closeCursor();
 
       // On envoie le membre vers la page de profil
       header("Location:profil.php");

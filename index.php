@@ -19,8 +19,6 @@
   </header>
 
 
-  </div>
-
   <h1>Trombinoscope</h1>
 
 
