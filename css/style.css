@@ -40,14 +40,15 @@ header img {
 }
 
 aside {
-  background-color: rgba(77, 77, 77, 1);
+  background-color: rgba(247, 147, 30, 1);
+  padding: 5px, 0;
+
+}
+
+.divaside img  {
   width: 100px;
 }
 
-.divaside img {
-  width: 100px;
-
-}
 /*FOOTER*/
 .footer {
   background-color: rgba(77, 77, 77, 1);

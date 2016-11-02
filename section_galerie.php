@@ -20,13 +20,8 @@
 
       <div class="asideportrait">
 
-        <img src="uploads/<?php echo $donnees['photo'];?>" />
+        <a href="portrait.php?portrait=<?php echo $donnees['id'];?>"><img src="uploads/<?php echo $donnees['photo'];?>" /></a>
 
-        <p><?php echo $donnees['prenom'];?> <?php echo $donnees['nom']; ?></p>
-
-        <p class="asidelien">
-          <a href="portrait.php?portrait=<?php echo $donnees['id'];?>">+ d'infos</a>
-        </p>
 
       </div>
 
