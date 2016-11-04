@@ -7,7 +7,14 @@
   <link rel="stylesheet" href="css/style.css" media="screen"/>
 </head>
 <body>
-  <img class="logotype" src="images/logo_mosstlo.svg" alt="logo de la mos saint-lo" />
+  <header>
+      <a href="index.php"><img src="images/logo_mosstlo.svg" alt="logo de la mos saint-lo"/></a>
+
+    <p class="lien">
+      <a href="admin/log_admin.php">Espace administration</a><br/>
+      <a href="membres/login.php">Espace membres</a>
+    </p>
+  </header>
 
 
 
