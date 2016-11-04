@@ -228,3 +228,10 @@ input {
   margin: 25px;
   align-content: center;
 }
+/*form_php, liste des élèves*/
+
+.liste {
+  display: inline-block;
+  padding-right: 10px;
+
+}

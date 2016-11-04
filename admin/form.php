@@ -39,9 +39,22 @@
     </form>
 
 
-    <p>
-      <a href="../index.php">Retour au trombinoscope</a>
+    <h3>Liste des élèves</h3>
+
+    <?php include './../bdd/connect.php';
+    $req = $bdd->query('SELECT * FROM trombi ORDER BY nom');
+    while($donnees = $req-> fetch())
+    {
+    ?>
+    <p class="liste">
+      <?php echo $donnees['nom'].' '. $donnees['prenom']; ?><br>
     </p>
+
+    <?php
+    }
+    $req->closeCursor();
+    ?>
+
 
     <?php include '../footer.php'; ?>
 
