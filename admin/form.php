@@ -1,3 +1,6 @@
+<?php
+session_start();
+ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -11,10 +14,16 @@
     <header>
       <a href="./../index.php"><img src="../images/logo_mosstlo.svg" alt="logo de la mos saint-lo"/></a>
 
+      <p>
+      Bonjour <?php echo $_SESSION['user_pseudo']; ?>, vous êtes connecté
+      </p>
+
       <p class="lien">
         <a href="log_admin.php">Espace administration</a><br/>
         <a href="./../membres/login.php">Espace membres</a>
+
       </p>
+
 
     </header>
 
