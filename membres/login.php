@@ -110,6 +110,7 @@ function verify_login($nom, $password){
 			// et on crée une variable user_id contenant l'id de l'utilisateur en BDD
 			// Cette variable est stockée dans $_SESSION, et suit l'utilisateur sur les pages
 			$_SESSION["user_id"] = $user['id'];
+      $_SESSION["user_prenom"] = $user['prenom'];
 			// Mise à jour de la date du dernier login
 			$req = $bdd->prepare('UPDATE trombi SET last_login = ? WHERE id = ?');
 			$req->execute(array(date('Y-m-d H:i:s'), $user['id']));

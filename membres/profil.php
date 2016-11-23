@@ -12,6 +12,10 @@
     <header>
       <a href="./../index.php"><img src="../images/logo_mosstlo.svg" alt="logo de la mos saint-lo"/></a>
 
+      <p>
+      Bonjour <?php echo $_SESSION['user_prenom']; ?>, vous êtes connecté
+      </p>
+
       <p class="lien">
         <a href="./../admin/log_admin.php">Espace administration</a><br/>
         <a href="./../membres/login.php">Espace membres</a>
@@ -19,7 +23,7 @@
 
     </header>
     <!-- - un `<h1>` "Bienvenue " + prénom de l'utilisateur -->
-    <h1>Bienvenue <?php echo $user['prenom']; ?></h1>
+    <h1>Bienvenue <?php echo $_SESSION['user_prenom']; ?></h1>
 
         <!-- -une zone "Vos informations"
       - Afficher "Votre profil est " + public ou privé selon le champ `public` en BDD
@@ -39,8 +43,7 @@
 
         $req = $bdd->prepare('SELECT * FROM trombi WHERE id=?');
 
-        $req->execute(array($_GET['portrait']));
-        $donnees=$req->fetch();
+        while($donnees=$req->fetch());
         ?>
 
         <img src="../uploads/<?php echo $donnees['photo'];?>" />

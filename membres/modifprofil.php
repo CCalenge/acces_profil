@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +12,10 @@
 <body>
   <header>
     <a href="./../index.php"><img src="../images/logo_mosstlo.svg" alt="logo de la mos saint-lo"/></a>
+
+    <p>
+    Bonjour <?php echo $_SESSION['user_prenom']; ?>, vous êtes connecté
+    </p>
 
     <p class="lien">
       <a href="./../admin/log_admin.php">Espace administration</a><br/>
