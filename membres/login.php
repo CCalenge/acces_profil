@@ -78,7 +78,7 @@
 *
 * @return string, message d'erreur eventuel
 */
-function verify_login($nom, $password){
+function verify_login($prenom,$nom, $password){
 
   // @TODO utiliser un require_once et global $bdd pour ne pas répeter
   // plusieurs fois le code de connexion à la BDD
