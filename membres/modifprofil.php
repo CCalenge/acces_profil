@@ -14,7 +14,7 @@
     <a href="./../index.php"><img src="../images/logo_mosstlo.svg" alt="logo de la mos saint-lo"/></a>
 
     <p>
-    Bonjour <?php echo $_SESSION['user_prenom']; ?>, vous êtes connecté
+      Bonjour <?php echo $_SESSION['user_prenom']; ?>, vous êtes connecté
     </p>
 
     <p class="lien">
@@ -26,43 +26,67 @@
 
   <form class="" action="modifprofil.php" method="post" enctype="multipart/form-data">
 
-    <label for="pseudo">Pseudo&#8239;:  </label><input type="text" name="pseudo"><br/>
+    <?php
+    // Connexion BDD
+      require_once '../bdd/connect.php';
 
-    <label for="nom">Nom&#8239;:  </label><input type="text" name="nom"/><br/>
-
-    <label for="prenom">Prénom&#8239;:  </label><input type="text" name="prenom"><br/>
-
-    <label for="naissance">Date de naissance&#8239;:  </label><input type="text" name="naissance"><br/>
-
-    <label for="ville">Ville&#8239;:  </label><input type="text" name="ville"><br/>
+    ?>
 
 
-    <label for="password">Mot de passe&#8239;: </label><input type="password" name="password" value=""></br>
+    <label for="pseudo">Pseudo&#8239;:  </label><input type="text" name="pseudo">
+    <input class="bouton" type="submit" name="submit" value="Valider" /><br/>
+<p>
+  <?php
 
-    <label for="password">Nouveau mot de passe&#8239;: </label><input type="password" name="passwd" value=""></br>
 
-    <label for="password">Confirmation du mot de passe&#8239;: </label><input type="password" name="confpasswd" value=""></br>
+  if(isset($_POST["submit"])){
+
+      $req = $bdd->prepare('UPDATE trombi SET pseudo = ? WHERE id = ?');
+      $req->execute(array('pseudo', $_SESSION["user_id"]));
+      $req->closeCursor();
+
+        header("Location:profil.php");
+    }
+   ?>
+</p>
+
+
+    <label for="nom">Nom&#8239;:  </label><input type="text" name="nom"/>
+    <input class="bouton" type="submit" name="submit" value="Valider" /><br/>
+
+    <label for="prenom">Prénom&#8239;:  </label><input type="text" name="prenom">
+    <input class="bouton" type="submit" name="submit" value="Valider" /><br/>
+
+    <label for="naissance">Date de naissance&#8239;:  </label><input type="text" name="naissance">
+    <input class="bouton" type="submit" name="submit" value="Valider" /><br/>
+
+    <label for="ville">Ville&#8239;:  </label><input type="text" name="ville">
+    <input class="bouton" type="submit" name="submit" value="Valider" /><br/>
+
+
+    <label for="password">Mot de passe&#8239;: </label><input type="password" name="password" value="">
+    <input class="bouton" type="submit" name="submit" value="Valider" /></br>
+
+    <label for="password">Nouveau mot de passe&#8239;: </label><input type="password" name="passwd" value="">
+    <input class="bouton" type="submit" name="submit" value="Valider" /></br>
+
+    <label for="password">Confirmation du mot de passe&#8239;: </label><input type="password" name="confpasswd" value="">
+    <input class="bouton" type="submit" name="submit" value="Valider" /></br>
 
     <label for="annee">Année d'entrée à la MOS&#8239;:  </label><input type="text" name="annee"><br/>
 
     <label for="presentation">Présentation&#8239;:  </label><textarea name="presentation" rows="8" cols="40"></textarea><br/>
+    <input class="bouton" type="submit" name="submit" value="Valider" />
 
-    <label for="emploi">Emploi&#8239;:  </label><input type="text" name="emploi"><br/>
+    <label for="emploi">Emploi&#8239;:  </label><input type="text" name="emploi">
+    <input class="bouton" type="submit" name="submit" value="Valider" /><br/>
 
     <label for="photo">Ajouter une trombine&#8239;:
     </label><input class="bouton" type="file" name="photo"/>
-
-    <input type="hidden" name="MAX_FILE_SIZE" value="1000000" /><br/>
+    <input type="hidden" name="MAX_FILE_SIZE" value="1000000" />
 
     <input class="bouton" type="submit" name="submit" value="Valider" />
   </form>
-
-
-
-
-
-
-</form>
 
 
 

@@ -39,9 +39,10 @@
 
         <?php
         include '../bdd/connect.php';
+
         //requête sql pour afficher le profil sélectionné sur le trombinoscope
 
-        $req = $bdd->prepare('SELECT * FROM trombi WHERE id=?');
+        $req = $bdd->prepare('SELECT * FROM trombi WHERE id= ?');
 
         while($donnees=$req->fetch());
         ?>
@@ -53,6 +54,7 @@
           <?php echo $donnees['nom']; ?>
         </div>
         <div class="renseignement">
+          <p> Pseudo : <?php echo $donnees['pseudo'] ?>
           <p>
             Né(e) le : <?php echo $donnees['date_naissance']; ?>
           </p>
