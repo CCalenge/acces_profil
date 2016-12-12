@@ -40,17 +40,18 @@
         <?php
         include '../bdd/connect.php';
 
+
         //requête sql pour afficher le profil sélectionné sur le trombinoscope
 
-        $req = $bdd->prepare('SELECT * FROM trombi WHERE id= ?');
+        $req = $bdd->prepare("SELECT * FROM trombi WHERE id = ?");
 
         while($donnees=$req->fetch());
         ?>
 
-        <img src="../uploads/<?php echo $donnees['photo'];?>" />
+        <img src="./../uploads/<?php echo $donnees['photo'];?>" />
 
         <div class="nomportrait">
-          <?php echo $donnees['prenom'];?>
+          <?php echo  $_SESSION['user_prenom'];?>
           <?php echo $donnees['nom']; ?>
         </div>
         <div class="renseignement">

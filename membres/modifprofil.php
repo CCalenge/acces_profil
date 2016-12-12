@@ -41,8 +41,8 @@
 
   if(isset($_POST["submit"])){
 
-      $req = $bdd->prepare('UPDATE trombi SET pseudo = ? WHERE id = ?');
-      $req->execute(array('pseudo', $_SESSION["user_id"]));
+      $req = $bdd->prepare("UPDATE trombi SET pseudo = ? WHERE id = ?");
+      $req->execute(array('pseudo', $user['id']));
       $req->closeCursor();
 
         header("Location:profil.php");
