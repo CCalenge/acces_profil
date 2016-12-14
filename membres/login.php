@@ -111,6 +111,23 @@ function verify_login($prenom,$nom, $password){
 			// Cette variable est stockée dans $_SESSION, et suit l'utilisateur sur les pages
 			$_SESSION["user_id"] = $user['id'];
       $_SESSION["user_prenom"] = $user['prenom'];
+      $_SESSION["user_nom"] = $user['nom'];
+      $_SESSION["user_pseudo"] = $user['pseudo'];
+      $_SESSION["user_password"] = $user['password'];
+      $_SESSION["user_annee"] = $user['annee'];
+      $_SESSION["user_photo"] = $user['photo'];
+      $_SESSION["user_date_insertion"] = $user['date_insertion'];
+      $_SESSION["user_last_login"] = $user['last_login'];
+      $_SESSION["user_date_naissance"] = $user['date_naissance'];
+      $_SESSION["user_presentation"] = $user['presentation'];
+      $_SESSION["user_avatar"] = $user['avatar'];
+      $_SESSION["user_id_groupe"] = $user['id_groupe'];
+      $_SESSION["user_travail"] = $user['travail'];
+      $_SESSION["user_ville"] = $user['ville'];
+      $_SESSION["user_email"] = $user['email'];
+      $_SESSION["user_public"] = $user['public'];
+
+
 			// Mise à jour de la date du dernier login
 			$req = $bdd->prepare('UPDATE trombi SET last_login = ? WHERE id = ?');
 			$req->execute(array(date('Y-m-d H:i:s'), $user['id']));

@@ -37,47 +37,36 @@
 
         <div class="">
 
-        <?php
-        include '../bdd/connect.php';
-
-
-        //requête sql pour afficher le profil sélectionné sur le trombinoscope
-
-        $req = $bdd->prepare("SELECT * FROM trombi WHERE id = ?");
-
-        while($donnees=$req->fetch());
-        ?>
-
-        <img src="./../uploads/<?php echo $donnees['photo'];?>" />
+        <img src="./../uploads/<?php echo $_SESSION["user_photo"];?>" />
 
         <div class="nomportrait">
           <?php echo  $_SESSION['user_prenom'];?>
-          <?php echo $donnees['nom']; ?>
+          <?php echo $_SESSION['user_nom']; ?>
         </div>
         <div class="renseignement">
-          <p> Pseudo : <?php echo $donnees['pseudo'] ?>
+          <p> Pseudo : <?php echo $_SESSION['user_pseudo'] ?>
           <p>
-            Né(e) le : <?php echo $donnees['date_naissance']; ?>
+            Né(e) le : <?php echo $_SESSION['user_date_naissance']; ?>
           </p>
           <p>
-            Ville : <?php echo $donnees['ville']; ?>
+            Ville : <?php echo $_SESSION["user_ville"]; ?>
           </p>
           <p>
-            email : <?php echo $donnees['email']; ?>
+            email : <?php echo $_SESSION['user_email']; ?>
           </p>
         </div>
         <p class="formation">
-          En formation à la MOS en <?php echo $donnees['annee']; ?>
+          En formation à la MOS en <?php echo $_SESSION['user_annee']; ?>
         </p>
       </div>
 
       <div class="renseignement">
 
         <p>
-          Présentation : <?php echo $donnees['presentation']; ?>
+          Présentation : <?php echo $_SESSION['user_presentation']; ?>
         </p>
         <p>
-          Emploi : <?php echo $donnees['travail']; ?>
+          Emploi : <?php echo $_SESSION['user_travail']; ?>
         </p>
       </div>
 
