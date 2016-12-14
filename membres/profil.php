@@ -13,7 +13,7 @@
       <a href="./../index.php"><img src="../images/logo_mosstlo.svg" alt="logo de la mos saint-lo"/></a>
 
       <p>
-      Bonjour <?php echo $_SESSION['user_prenom']; ?>, vous êtes connecté
+      Bonjour <?php echo $_SESSION['user_pseudo']; ?>, vous êtes connecté(e)
       </p>
 
       <p class="lien">
@@ -23,7 +23,7 @@
 
     </header>
     <!-- - un `<h1>` "Bienvenue " + prénom de l'utilisateur -->
-    <h1>Bienvenue <?php echo $_SESSION['user_prenom']; ?></h1>
+    <h1>Bienvenue <?php echo $_SESSION['user_pseudo']; ?></h1>
 
         <!-- -une zone "Vos informations"
       - Afficher "Votre profil est " + public ou privé selon le champ `public` en BDD
@@ -35,14 +35,15 @@
       <div class="">
         <h3>Vos informations</h3>
 
-        <div class="">
+        <div class="portraitProfil">
 
         <img src="./../uploads/<?php echo $_SESSION["user_photo"];?>" />
 
-        <div class="nomportrait">
+        <div class="nom">
           <?php echo  $_SESSION['user_prenom'];?>
           <?php echo $_SESSION['user_nom']; ?>
         </div>
+
         <div class="renseignement">
           <p> Pseudo : <?php echo $_SESSION['user_pseudo'] ?>
           <p>

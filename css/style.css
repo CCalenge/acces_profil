@@ -146,6 +146,13 @@ h2 {
   padding: 0;
 }
 
+/*profil.php*/
+
+.portraitProfil img {
+  width: 200px;
+  margin: 0px;
+  padding: 0;
+}
 
 .formation {
   text-align: center;

@@ -14,7 +14,7 @@
     <a href="./../index.php"><img src="../images/logo_mosstlo.svg" alt="logo de la mos saint-lo"/></a>
 
     <p>
-      Bonjour <?php echo $_SESSION['user_prenom']; ?>, vous êtes connecté
+      Bonjour <?php echo $_SESSION['user_prenom']; ?>, vous êtes connecté(e)
     </p>
 
     <p class="lien">
