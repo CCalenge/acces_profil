@@ -37,12 +37,12 @@
     <input class="bouton" type="submit" name="submit" value="Valider" /><br/>
 <p>
   <?php
-
+$pseudo = $_POST["pseudo"];
 
   if(isset($_POST["submit"])){
 
-      $req = $bdd->prepare("UPDATE trombi SET pseudo = ? WHERE id = ?");
-      $req->execute(array('pseudo', $user['id']));
+      $req = $bdd->prepare("UPDATE trombi SET pseudo = '$pseudo' WHERE id = ?");
+      $req->execute(array($_SESSION['user_id']));
       $req->closeCursor();
 
         header("Location:profil.php");
