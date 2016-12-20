@@ -75,9 +75,7 @@
 
     <a href="modifprofil.php">Modifiez vos infos</a>
 
-    <?php
-    $req->closeCursor();
-    ?>
+    
       </div>
 
 
